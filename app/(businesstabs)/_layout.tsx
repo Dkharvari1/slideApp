@@ -1,5 +1,9 @@
 import { Stack } from "expo-router";
 
-export default function BusinessLayout() {
-  return <Stack />;
+export default function RootLayout() {
+  return (
+    <Stack>
+      <Stack.Screen name="(usertabs)" options={{headerShown: false}} />
+    </Stack>
+  );
 }
