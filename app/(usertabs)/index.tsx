@@ -1,13 +1,14 @@
 // app/index.tsx
 
-import React from "react";
+import { Redirect } from "expo-router";
+import React, { useEffect, useState } from "react";
 import {
   Dimensions,
   SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
-  View
+  View,
 } from "react-native";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
@@ -47,6 +48,16 @@ const nearbyDeals = [
 ];
 
 export default function HomeScreen() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsAuthenticated(true), 2000);
+  });
+
+  if (!isAuthenticated) {
+    return <Redirect href="/(auth)/login" />;
+  }
+
   const cardWidth = SCREEN_WIDTH * 0.7; // 70% of screen for featured
 
   return (
