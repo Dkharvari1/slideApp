@@ -31,7 +31,7 @@ export default function LoginScreen() {
         setTimeout(() => {
             setLoading(false);
             // Go directly to the (user) tab group Home screen
-            router.replace("/(user)");
+            router.replace("/(user)/home");
         }, 700);
     };
 

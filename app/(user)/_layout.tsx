@@ -16,7 +16,7 @@ const ACTIVE = ACCENT;
 export default function UserTabsLayout() {
     return (
         <Tabs
-            initialRouteName="index" // app/(user)/index.tsx → Home
+            initialRouteName="home" // app/(user)/index.tsx → Home
             screenOptions={{
                 headerShown: false, // We'll design our own headers per screen if needed
                 tabBarActiveTintColor: ACTIVE,
@@ -36,7 +36,7 @@ export default function UserTabsLayout() {
             }}
         >
             <Tabs.Screen
-                name="index"
+                name="home"
                 options={{
                     title: "Home",
                     tabBarIcon: ({ color, size, focused }) => (
@@ -45,7 +45,7 @@ export default function UserTabsLayout() {
                 }}
             />
 
-            {/* <Tabs.Screen
+            <Tabs.Screen
                 name="explore"
                 options={{
                     title: "Explore",
@@ -55,7 +55,7 @@ export default function UserTabsLayout() {
                 }}
             />
 
-            <Tabs.Screen
+            {/* <Tabs.Screen
                 name="deals"
                 options={{
                     title: "Deals",
